@@ -1,0 +1,276 @@
+
+:root {
+    --background: #0a0a0a;
+    --card: #111315;
+    --border: #25282b;
+    --text: #f5f5f5;
+    --muted: #999da5;
+    --accent: #10b981;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+}
+
+.navbar {
+    height: 75px;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+}
+
+.logo {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-dot {
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-right: 8px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+.system-status {
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 70px 25px;
+}
+
+.hero {
+    margin-bottom: 55px;
+}
+
+.eyebrow,
+.card-label {
+    font-family: 'JetBrains Mono', monospace;
+    color: var(--accent);
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+
+.hero h1 {
+    font-size: clamp(42px, 7vw, 76px);
+    line-height: 1.1;
+    margin: 25px 0;
+    letter-spacing: -3px;
+}
+
+.hero h1 span {
+    color: var(--accent);
+}
+
+.hero-description {
+    color: var(--muted);
+    max-width: 540px;
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.primary-button {
+    background: var(--accent);
+    color: #06130e;
+    border: none;
+    padding: 14px 22px;
+    margin-top: 25px;
+    font-weight: 700;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.primary-button:hover {
+    opacity: 0.85;
+}
+
+.dashboard {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 26px;
+    min-height: 220px;
+    transition: border-color 0.2s ease,
+                transform 0.2s ease;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-3px);
+}
+
+.card h2 {
+    font-size: 21px;
+    margin: 24px 0 12px;
+}
+
+.card p:not(.card-label) {
+    color: var(--muted);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.profile-card {
+    grid-column: span 2;
+}
+
+.project-card {
+    grid-column: span 1;
+}
+
+.ai-card {
+    grid-column: span 1;
+}
+
+.architecture-card {
+    grid-column: span 2;
+}
+
+.contact-card {
+    grid-column: span 3;
+    min-height: 150px;
+}
+
+.tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.tags span {
+    color: var(--accent);
+    background: #10251f;
+    padding: 7px 10px;
+    border-radius: 5px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.project-status,
+.coming-soon {
+    display: inline-block;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    margin-top: 20px;
+}
+
+.architecture {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 8px;
+    margin-top: 25px;
+    flex-wrap: wrap;
+}
+
+.architecture div {
+    background: #1b2422;
+    border: 1px solid #244438;
+    padding: 13px;
+    border-radius: 6px;
+    color: var(--accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+.architecture span {
+    color: var(--accent);
+}
+
+footer {
+    display: flex;
+    justify-content: space-between;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+}
+
+.api-status {
+    margin-top: 20px;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+}
+
+@media (max-width: 750px) {
+    .navbar {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .container {
+        padding: 45px 18px;
+    }
+
+    .dashboard {
+        grid-template-columns: 1fr;
+    }
+
+    .card,
+    .profile-card,
+    .project-card,
+    .ai-card,
+    .architecture-card,
+    .contact-card {
+        grid-column: span 1;
+    }
+
+    .architecture {
+        justify-content: center;
+    }
+
+    footer {
+        gap: 15px;
+        flex-direction: column;
+    }
+}
